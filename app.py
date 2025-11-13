@@ -3,14 +3,14 @@
 #         print(x + y)
 #         return x + y
 
-#     def add_many(numbers):
-#         print(sum(numbers))
-#         return sum(numbers)
+# #     def add_many(numbers):
+# #         print(sum(numbers))
+# #         return sum(numbers)
 
-#     def subtract(numbers):
-#         return numbers
+# #     def subtract(numbers):
+# #         return numbers
 
-# Calculator.add(767676, 888)
+# # Calculator.add(767676, 888)
 
 class pet:
     def __init__(self, name, money, inventory):
@@ -27,3 +27,4 @@ rice = pet("Bread", 150, ["Potion"])
 
 rice.buy({"title": "cha siu", "atk": 100})
 print(rice.__dict__)
+
