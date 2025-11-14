@@ -23,8 +23,8 @@ class pet:
         print(self.inventory)
 
 
-rice = pet("Bread", 150, ["Potion"])
+rice = pet("rice", 150, ["Potion"])
 
-rice.buy({"title": "cha siu", "atk": 100})
+rice.buy({'title': "cha siu", "atk": 100})
 print(rice.__dict__)
 
