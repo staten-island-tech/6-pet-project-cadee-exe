@@ -26,9 +26,7 @@ class pet:
 
     def food(self, item):
         
-
-    
-rice = pet("rice", 150, ["Potion"])
+rice = pet("item", 150, ["Potion"])
 rice.buy("cannibalism")
 
 print(rice.__dict__)
