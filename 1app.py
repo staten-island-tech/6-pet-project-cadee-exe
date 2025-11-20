@@ -12,26 +12,31 @@
 # If EVERYTHING is good, the function should return a dictionary that represents the newly created user.
 
 def valid(email, password):
-
+    if not isinstance(email, str) or not isinstance(password, str):
+        return "Invalid: Email and password must be strings"
     if "@" not in email:
-        return"incorrect email format"
-    if isinstance(email, str) or not isinstance(password, str):
-        return"Invalid: Email and password must be strings"
-    
+        return "incorrect email format"
+    if len(password) < 8:
+        return "Error: password mus be at least 8 characters long!"
+    if not any(ch.isdigit() for ch in password):
+        return "Error: password must include at least 1 number"
+    if not any(ch.isupper() for ch in password):
+        return "Error: password must include at least one uppercase letter"
     return{'email': email, 'password': password}
-print(valid("test@gmail.com", "passwordmustbestring"))
+print(valid("test@gmail.com", "123456789Qe"))
 
 
+# def valid(email, password):
+#     if "@" not in email:
+#         return"invalid email format"
 #     if len(password) <= 8 and password.isdigit not in password:
 #         for i in password:
 #             if i.isupper in password:
 #                  return"invalid password"
 #             print("invalid password")
-#         else:
-#             print("your", password, "is valid")
-#     if len(password) >= 8 and password.isdigit:
-#         return"valid password format!"
-#     print("is valid")
+#         if len(password) >= 8 and password.isdigit:
+#             return"valid password format!"
+#         print("your", password, "is valid")
 # valid("test@gmail.com", "q135wsfshg")
    
 
