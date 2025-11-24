@@ -20,31 +20,41 @@ class pet:
         self.happiness = happiness
         self.food = food
        
-       
     def buy(self, item):
         self.inventory.append(item)
         print(self.inventory)
 
+    def happiness(self, item):
+        self.happiness.append(item)
+        self.happiness += 10
+  
+        print(f"{self.name}'s happiness is at {self.happiness}")
+     
     def food(self, item):
-        self.inventory.append(item)
-        print(self.happiness)
-   
+        self.hunger += 25
+        if self. food in item:
+            print(f"{self.name}'s hunger is at {self.hunger}")
+        if self.food not in item:
+            print("rice is starving. Hp -1")
+    
+        self.food == item("no food")
+        print(rice.__dict__)
 
         
-rice = pet("atk", 150, ["Potion"],"food", "chasiu", "bao", "hunger")
-print(rice.__dict__)
+rice = pet("atk", 150, ["Potion"],"food", "happiness")
 
 rice.buy("cannibalism")
-print rice.dict
-rice.food({"title":"happiness", "food": "chasiu", "bao", "hunger", "bar": 100 })
+rice.buy("cha siu")
+rice.buy("bao")
+print (rice.__dict__)
 
 class pet:
     def __init__(self, name, atk):
         self.name = name
         self.atk = atk
     
-    def display_info(self):
-        return f"User: {self.name}, atk: {self.atk}"
+def display_info(self):
+    return f"User: {self.name}, atk: {self.atk}"
 
 
 
