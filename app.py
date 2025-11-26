@@ -17,37 +17,58 @@ class You:
         self.name = input("you take care of rice ok so what ur name")
 
 class pet:
-    def __init__(self, name, money, inventory, food, happiness, hunger):
+    def __init__(self, name, inventory, feed, happiness, hunger, food):
         self.name = name
-        self.money = money
         self.inventory = inventory
         self.happiness = happiness
-        self.food = food
+        self.food = feed
         self.hunger = hunger
+        self.feed = food
+        
       
-       
         self.happiness = 0
         self.hunger = 0
     
     def hungry(self, food):
          self.hunger.append(food)
-         self.hunger +=5
+         self.hunger += 5
+         print(f"{self.name}'s hunger is at {self.hunger}")
+         if self.hunger > 75:
+            print("Rice is full. any more food and hes too fat")   
+         if self.hunger < 75:
+            print("Rice is too hungry hes gonna die")
+         if self.hunger > 100:
+             print("ur gonna kill rice bro hes obese")
+
+    def eat(food, hunger, feed):
+        feed.append(food)
+        hunger += feed
+        print("You fed Rice", {food})
+    eat("bean", )
     
     def buy(self, item):
         self.inventory.append(item)
         print(self.inventory)
+    
 
     def happy(self, item):
         self.happiness.append(item)
         self.happiness += 10
         print(f"{self.name}'s happiness is at {self.happiness}")
+        if self.happiness > 50:
+            print("rice is happy")
+        if self.happiness < 50:
+            print("rice is depressed")
+        if self.happiness  > 100:
+            print("rice is too jolly")
 
-        self.food = ["bean", "sushi", "cheeseburger", "baguette", "pear", "beans on toast", "job application", "tomato", "grape", "pizza", "chicken", "teriyaki", "salmon", "french fries"
-                     "rice cake", "cake", "ice cream", "juice", "pibbl"]
-        self.happiness = ["fetch", "cooking", "drawing", "reading", "rolling around", "being big", "job", "working", 
+        item == ["bean", "sushi", "cheeseburger", "baguette", "pear", "beans on toast", "job application", "tomato", "grape", "pizza", "chicken", "teriyaki", "salmon", "french fries"
+                     "rice cake", "cake", "ice cream", "juice", "pibbl"
+                        "fetch", "cooking", "drawing", "reading", "rolling around", "being big", "job", "working", 
                           "school", "playing", "Roblox", "unemploynent", "money"]
-
-rice = pet("rice", 150, ["rice"],"food", "happiness", "hunger")
+    
+rice = pet("rice", ["rice"], "food", "happiness", "hunger", "feed")
+    
 
 rice.buy("cannibalism")
 rice.buy("cha siu")
