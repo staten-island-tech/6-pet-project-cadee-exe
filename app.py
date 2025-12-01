@@ -28,6 +28,7 @@ class pet:
       
         self.happiness = 0
         self.hunger = 0
+
     
     def hungry(self, food):
          self.hunger.append(food)
@@ -38,14 +39,8 @@ class pet:
          if self.hunger < 75:
             print("Rice is too hungry hes gonna die")
          if self.hunger > 100:
-             print("ur gonna kill rice bro hes obese")
+             print("ur gonna kill rice bro hes fat")
 
-    def eat(food, hunger, feed):
-        feed.append(food)
-        hunger += feed
-        print("You fed Rice", {food})
-    eat("bean", )
-    
     def buy(self, item):
         self.inventory.append(item)
         print(self.inventory)
@@ -62,11 +57,20 @@ class pet:
         if self.happiness  > 100:
             print("rice is too jolly")
 
-        item == ["bean", "sushi", "cheeseburger", "baguette", "pear", "beans on toast", "job application", "tomato", "grape", "pizza", "chicken", "teriyaki", "salmon", "french fries"
-                     "rice cake", "cake", "ice cream", "juice", "pibbl"
+ 
+    eat = input("What would you like to feed rice?")
+    def eats(food, hunger):
+        hunger += 5
+        print(f"You fed Rice a {food}, Hunger increased by, {hunger}")
+        if food not in item:
+            print("Uh oh: food no exist. sorry!")
+        
+   
+            item = ["bean", "sushi", "cheeseburger", "baguette", "pear", "beans on toast", "job application", "tomato", "grape", "pizza", "chicken", "teriyaki", "salmon", "french fries"
+                     "rice cake", "cake", "ice cream", "juice", "pibbl", "ruler",
                         "fetch", "cooking", "drawing", "reading", "rolling around", "being big", "job", "working", 
                           "school", "playing", "Roblox", "unemploynent", "money"]
-    
+        
 rice = pet("rice", ["rice"], "food", "happiness", "hunger", "feed")
     
 
