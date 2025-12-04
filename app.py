@@ -12,10 +12,6 @@
 
 # # # Calculator.add(767676, 888) """
 
-class You:
-    def __init__(self):
-        self.name = input("you take care of rice ok so what ur name")
-
 class pet:
     def __init__(self, name, inventory, feed, happiness, hunger, food, live):
         self.name = name
@@ -24,37 +20,44 @@ class pet:
         self.food = food
         self.hunger = hunger
         self.feed = feed
-        self.live = True
-        
+        self.live = live
+        live = True
+
       
         self.happiness = 50
         self.hunger = 50
 
+    def buy(self, item):
+        self.inventory.append(item)
+        print(self.inventory)
+
+
     def hungry(self):
-         while self.live == True:
             if self.hunger >= 50 and self.hunger <= 100:
                 print(f"{self.name} is not very hungry, hunger is at {self.hunger}")
-                break
             elif self.hunger < 50:
                 print(f"{self.name} is starving, hunger at {self.hunger}")
-                break
-            elif 
+            else:
+                print(f"{self.name} is too fat, {self.name} is gonna die")
+            self.live = False
+
+    def eat(self, food):
+       notfood = ["bean", "cha siu", "apple", "burger", "glass", "homework", "bacon", "croissant", "baguette", "garlic", "baconetta", "usagi"]
+       while self.live == True:
+            if food in notfood:
+                self.hunger += 5
+                print(f"{self.name}'s hunger is now at {self.hunger}.")
+            else:
+                print(f"{self.name} doesn't own {self.food}.")
+    eat("rice", "glass")
+
+    def happy(self, activities):
+       while self.live == True:
+            play = input(f"What would you like to do with {self.name}?")
+            activities == ["fetch", "job", "sewing", "exercise", "getting posessed", "video games", "tv", "addiction"]
+rice = pet("rice", ["rice"], "food", "happiness", "hunger", "feed", ["live= True"])
 
 
-    def happy(self):
-        while self.live == True:
-            
-            play = input("What would you like to do with fish?")
-      
 
-      
-
-    
-
-fish = pet("fish", ["fish"], "food", "happiness", "hunger", "feed", {"live= True"})
-
-fish.__dict__()
-fish.hunger()
-fish.happiness()
     
 
