@@ -23,7 +23,7 @@ class pet:
         self.live = live
         self.play = play
         live = True
-
+        
       
         self.happiness = 50
         self.hunger = 50
@@ -43,18 +43,15 @@ class pet:
                 print(f"{self.name} is overfed, dont feed. hunger at {self.hunger}")
        else:   
              print(f"{self.name}'s hunger is at {self.hunger}")
-             while self.live == False:
-                 break
+         
     def fun(play, choice, self):
         while self.live == True:
                 play == input("what would you like to do with rice?")
-                if choice == "ap world history" or "job":
-                    happiness -=10
-                    print(f"whoops! shouldn't have done that! {self.name}'s happiness is at {self.happiness}") 
+        if choice == "ap world history" and "job":
+                happiness -=10
+                print(f"whoops! shouldn't have done that! {self.name}'s happiness is at {self.happiness}") 
         else:
             print(f"{self.name} is happy! Happiness at {self.happiness}")
-            while self.live == False:
-                 break
                 
     def ignore(self):
         while self.live == True:
@@ -62,26 +59,24 @@ class pet:
                 self.live = False
             if self.happiness < 15:
                  self.live = False
-        while self.live == False:
+            if self.live == False:
              break
                
     def activities(self, choice):
         while self.live == True:
             if choice == "feed":
                 self.feed(eat = input("what would you feed rice?"))
-                stats = input("do you want stats rn? y/n")
-                if stats == "y":
+            stats = input("do you want stats rn? y/n")
+            if stats == "y":
                     print(rice.__dict__)
-                if self.live == True:
-                    self.play(choice = input("what else would you like to do?"))
-                elif stats == "n":
-                    self.play(choice = input("what else yould you like to do?"))
-            if choice == "play":
+            elif stats == "n":
+                    print("what else would you like to do?")
+            elif choice == "play":
                     print(f"{self.name}'s happiness is at {self.happiness}")
-            elif stats == "ignore":
+            elif choice == "ignore":
                     print(f"{self.name} is sad, please do something with bro")
                     self.happiness -=25       
-        while self.live == False:
+            if self.live == False:
                 print(f"{self.name} has DIED")
                 break
 
@@ -89,6 +84,5 @@ class pet:
 rice = pet("rice", ["rice"], ["cha siu", "bao", "burger", "apple", "cheeseburger", "sushi"], 
            "hunger", "happiness", "feed", "live= True", ["soccer", "catch", "job", "roblox", "video games", "ap world history"])
 print(rice.__dict__)
-
 rice.activities(choice = input("What would you like to do? play/feed/ignore"))
 
